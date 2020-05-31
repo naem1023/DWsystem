@@ -1,9 +1,10 @@
 
 import java.util.*;
-
+imp
 /**
  * 
  */
+
 public class ModeManager {
 
     /**
@@ -20,7 +21,7 @@ public class ModeManager {
     /**
      * 
      */
-    private Object modes[];
+    private Mode modes[];
 
     /**
      * 
@@ -30,7 +31,8 @@ public class ModeManager {
     /**
      * 
      */
-    private Button clickedButton;
+    //리턴형 Button?
+    private void clickedButton;
 
     /**
      * 
@@ -70,6 +72,7 @@ public class ModeManager {
      */
     public void changeMode() {
         // TODO implement here
+        modes[1].getActive()
     }
 
     /**

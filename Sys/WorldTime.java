@@ -1,3 +1,4 @@
+package Sys;
 
 import java.util.*;
 
@@ -29,7 +30,7 @@ public class WorldTime {
     /**
      * @param params
      */
-    public void changeTimezone(void params) {
+    public void changeTimezone() {
         // TODO implement here
     }
 

@@ -1,3 +1,4 @@
+package Sys;
 
 import java.util.*;
 
@@ -20,7 +21,7 @@ public class City {
     /**
      * 
      */
-    private string CityName;
+    private String CityName;
 
 
 }

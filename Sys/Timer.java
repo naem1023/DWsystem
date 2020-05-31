@@ -1,16 +1,23 @@
-
+package Sys;
 import java.util.*;
 
 /**
  * 
  */
-public class Timer {
+public class Timer implements  Mode{
 
     /**
      * Default constructor
      */
+    private boolean isActivated;
+
+
     public Timer() {
+        isActivated=false;
     }
+
+
+
 
     /**
      * 

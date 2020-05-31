@@ -1,4 +1,8 @@
+package Sys;
+
 public interface Mode{
-    void setActive(boolean act);
-    boolean getActive();
+
+    public void setActive(boolean act);
+    public boolean getActive();
+
 }
