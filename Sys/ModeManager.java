@@ -1,10 +1,9 @@
-
+package Sys;
 import java.util.*;
-imp
+
 /**
  * 
  */
-
 public class ModeManager {
 
     /**
@@ -16,12 +15,12 @@ public class ModeManager {
     /**
      * 
      */
-    private Boolean isModeActive[];
+    private boolean[] isModeActive;
 
     /**
      * 
      */
-    private Mode modes[];
+    private Mode[] modes;
 
     /**
      * 
@@ -31,18 +30,18 @@ public class ModeManager {
     /**
      * 
      */
-    //리턴형 Button?
-    private void clickedButton;
+    //리턴형 Button 정의
+    private Button clickedButton();
 
     /**
      * 
      */
-    private Boolean longClickedFlag;
+    private boolean longClickedFlag;
 
     /**
      * 
      */
-    private Boolean buzzerFlag;
+    private boolean buzzerFlag;
 
     /**
      * 
@@ -72,7 +71,7 @@ public class ModeManager {
      */
     public void changeMode() {
         // TODO implement here
-        modes[1].getActive()
+        modes[1].getActive();
     }
 
     /**
