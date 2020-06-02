@@ -11,11 +11,26 @@ public class ModeManager {
      * Default constructor
      */
     public ModeManager() {
+        buzzer = new Buzzer();
+        time = new Time();
+        alarm = new Alarm(buzzer, time);
+        stopWatch = new StopWatch();
+        timer = new Timer();
+        calorieCheck = new CalorieCheck();
+
+        modes = new Mode[5];
+        modes[0] = time;
+        modes[1] = alarm;
+        modes[2] = timer;
+        modes[3] = stopWatch;
+        modes[4] = calorieCheck;
+
     }
+
     private Boolean isModeActive[];//Time Alarm Timer Stopwatch Calorie Check 순
     private Boolean editStatus[];//set mode 중 return to default screen시 저장안하기 위해 이 변수로 편집.
 
-    private Object modes[];
+    private Mode modes[];
     private int currentMode;//0~5 Time Alarm Timer Stopwatch Calorie Check 순으로    *8일경우 setMode
     private int activeList[];//활성된거 4개가 들어가는 배열 4개가 활성화되어있을 때 비활성화된걸 활성화시킬때 관리하기위함
     //각 mode에 대한 index값이 들어가게 됨.
@@ -27,6 +42,15 @@ public class ModeManager {
     private int ActiveModeCounter;//setMode때 4개의 mode가 활성화되어야만 탈출가능 그때 참조할 변수 active된 mode의 개수
     private int currentCursor;//setMode시에 status값을 바꿀 때 참조할 index
 
+    //객체 생성
+    private Buzzer buzzer;
+    private Mode time;
+    private Mode alarm;
+    private Mode stopWatch;
+    private Mode timer;
+    private WorldTime worldTime;
+    //private CalorieCheck calorieCheck;
+    
 
 
 
@@ -42,7 +66,8 @@ public class ModeManager {
      *
      */
     public void changeMode() {
-        // TODO implement here
+        if(isModeActive[(currentMode+1) % 6] == true)
+            currentMode += 1;
     }
 
     /**
@@ -106,7 +131,7 @@ public class ModeManager {
         this.isModeActive=this.editStatus;
     }
 
-
+    //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.
     public void changeToFirstMode() {
         // TODO implement here
     }

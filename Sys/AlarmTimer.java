@@ -31,7 +31,7 @@ public class AlarmTimer {
 
 
     /**
-     * void -> LocalTime
+     * void -> LocalTime, getter
      */
     public LocalTime requestExpirationTime() {
         return expirationTime;

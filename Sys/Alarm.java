@@ -9,13 +9,13 @@ import java.time.LocalDateTime;
 public class Alarm implements Mode{
 
     //ModeManager에서 Buzzer객체
-    public Alarm(Buzzer buzzer, Time time) {
+    public Alarm(Buzzer buzzer, Mode time) {
 
         //ModeManager에서 사용중인 buzzer를 받아서 사용.
         this.buzzer = buzzer;
         //Time의 시간을 받아와야지 buzzer를 작동가능.
-        this.time = time;
-        //cursor==0 : Hour || cursor==1: minute.
+        this.time = (Time)time;
+        //cursor==true : Hour || cursor==false: minute.
         isCursorOnHour = true;
         currentAlarmTimerIndex = 0;
         alarm = new AlarmTimer[4];
