@@ -6,8 +6,9 @@ import java.time.LocalDateTime;
  *
  */
 
-public class Alarm{
+public class Alarm implements Mode{
 
+    //ModeManager에서 Buzzer객체
     public Alarm(Buzzer buzzer, Time time) {
 
         //ModeManager에서 사용중인 buzzer를 받아서 사용.
@@ -69,9 +70,12 @@ public class Alarm{
     private Buzzer buzzer;
 
     private Time time;
-    
-    
 
+    //추가 - 변수
+    private boolean isActivated; 
+    
+    
+    //requestNextAlarm, requestFirstAlarm는 지울것임 (시퀀스 다이어그램 수정도 같이..)
     public LocalTime requestNextAlarm_2(){
         currentAlarmTimerIndex = (currentAlarmTimerIndex + 1) % 4;
         return alarm[currentAlarmTimerIndex].requestExpirationTime();
@@ -135,6 +139,12 @@ public class Alarm{
     /**
      *
      */
+
+    //GUI에서 사용할 커서.
+    public boolean isCursorHour(){
+        return isCursorOnHour;
+    }
+
     public void changeCursor() {
         this.isCursorOnHour = !isCursorOnHour;
     }
@@ -154,6 +164,13 @@ public class Alarm{
     //추가 - getter
     public LocalTime getCurrentAlarmTimer(){
         return alarm[currentAlarmTimerIndex].requestExpirationTime();
+    }
+
+    public void setActive(boolean act){
+        isActivated = act;
+    }
+    public boolean getActive(){
+        return isActivated;
     }
 
 }
