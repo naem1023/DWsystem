@@ -24,6 +24,8 @@ public class ModeManager {
         modes[2] = timer;
         modes[3] = stopWatch;
         modes[4] = calorieCheck;
+        nowMode = modes[0];
+        
 
     }
 
@@ -42,7 +44,9 @@ public class ModeManager {
     private int ActiveModeCounter;//setMode때 4개의 mode가 활성화되어야만 탈출가능 그때 참조할 변수 active된 mode의 개수
     private int currentCursor;//setMode시에 status값을 바꿀 때 참조할 index
 
-    //객체 생성
+
+
+    //객체 생성 ms
     private Buzzer buzzer;
     private Mode time;
     private Mode alarm;
@@ -50,6 +54,9 @@ public class ModeManager {
     private Mode timer;
     private WorldTime worldTime;
     //private CalorieCheck calorieCheck;
+
+    private Mode nowMode;
+    //ms
     
 
 
@@ -66,8 +73,13 @@ public class ModeManager {
      *
      */
     public void changeMode() {
-        if(isModeActive[(currentMode+1) % 6] == true)
-            currentMode += 1;
+        int i=0;
+        while(true){
+            if(modes[i++].getActive() == true){
+                nowMode = modes[i];
+                break;
+            }
+        }
     }
 
     /**
@@ -139,8 +151,5 @@ public class ModeManager {
     /**
      *
      */
-    public void Operation4() {
-        // TODO implement here
-    }
 
 }
