@@ -11,12 +11,12 @@ public class WorldTime {
 
 
     public WorldTime(LocalDateTime currentTime){
-        this.worldTimes[0]=new City(0,"SEL");
+        this.worldTimes[0]=new City(9,"SEL");
         this.worldTimes[1]=new City(1,"PAR");
         this.worldTimes[2]=new City(0,"LON");
-        this.worldTimes[3]=new City(0,"SYD");
-        this.worldTimes[4]=new City(0,"LAX");
-        this.worldTimes[5]=new City(0,"NYC");
+        this.worldTimes[3]=new City(10,"SYD");
+        this.worldTimes[4]=new City(-7,"LAX");
+        this.worldTimes[5]=new City(-4,"NYC");
 
         this.CurrentCity=0;
     }
